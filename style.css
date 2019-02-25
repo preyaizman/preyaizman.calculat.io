@@ -1,0 +1,144 @@
+
+/* .calc {
+    height: auto;
+    min-height: 300px;
+    width: 80vw;
+    margin: auto;
+    background: lightblue;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+.tabName {
+    display: block;
+    height: 30px;
+    width: 25%;
+    float: left;
+    margin: 0 2%;
+    background: rosybrown;
+}
+.tab {
+    float: left;
+    display: none;
+    height: auto;
+    width: 90%;
+}
+select {
+    margin: 2%;
+}
+[type="text"] {
+    width: 30px;
+    margin: 1%;
+}
+.tab .typeI {
+    display: inline-block;
+}
+.price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    height:15%;
+    background: red;
+}
+#tab1 {
+    background: forestgreen;
+}
+#tab2 {
+    background: yellowgreen;
+}
+#tab3 {
+    background: goldenrod;
+}
+[type="radio"]:checked + label {
+    background: rebeccapurple;
+}
+#name1:checked~#tab1,
+#name2:checked~#tab2,
+#name3:checked~#tab3 {
+    display: block;
+}
+[name="tab"] {
+    display: none;
+} */
+
+/* new */
+
+.calculate {
+    height: auto;
+    min-height: 300px;
+    width: 80vw;
+    margin: auto;
+    background: lightblue;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+#item {
+    height: 5%;
+    width: 80%;
+    margin: 30px 10% 5px;
+}
+
+.tab {
+    width: 100%;
+    min-height: 400px;
+    background: coral;
+}
+
+.radio {
+    margin: 0 10% 5px;
+    width: 40%;
+}
+
+.radio label,
+.option label{
+    display: inline-block;
+    width: 45%;
+    margin: 0;
+}
+
+.tabName {
+    display: block;
+    height: 40px;
+    width: 25%;
+    float: left;
+    margin: 0;
+    background: rosybrown;
+}
+
+.tab2 {
+    margin: 0;
+    display: none;
+    height: auto;
+    width: 100%;
+    background: rebeccapurple;
+}
+
+.tab2 .option {
+    width: 80%;
+    margin: 0 10%;
+}
+
+[type="radio"]:checked + label {
+    background: rebeccapurple;
+}
+
+[name="tab2"] {
+    display: none;
+}
+
+#name1:checked~#tab1,
+#name2:checked~#tab2,
+#name3:checked~#tab3,
+#name4:checked~#tab4 {
+    display: block;
+}
+
+.price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}

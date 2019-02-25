@@ -1,0 +1,762 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+    <!-- <div class="calc">
+            <input type="radio" name="tab" id="name1" checked><label for="name1" class="tabName">изделия</label>
+            <input type="radio" name="tab" id="name2"><label for="name2" class="tabName">дополнительно</label>
+            <input type="radio" name="tab" id="name3"><label for="name3" class="tabName"></label>
+            <div class="tab" id="tab1">
+                <div style="width:100%; background: firebrick">
+                    <select id="tovar" onchange="getPrice()">
+                        <option value="1">Пальто утепленное</option>
+                        <option value="2">Пальто демисезонное</option>
+                        <option value="3">Плащ</option>
+                        <option value="4">Куртка утепленная</option>
+                        <option value="5">Куртка</option>
+                        <option value="6">Пиджак классика</option>
+                        <option value="7">Смокинг</option>
+                    </select>
+                    <label>количество<input type="text" id="col" value="1" onchange="getPrice()"></label><br>
+                    <label class="typeI"><input type="radio" name="typeI">Разработка основы конструкции на
+                        модель</label><br>
+                    <label class="typeI"><input type="radio" name="typeI">Изготовление эталона-образца в оригинальных
+                        материалах </label>
+                </div>
+            </div>
+            <div class="tab" id="tab2">
+                <h2>Эскизная проработка модели</h2>
+                <label><input type="checkbox" name="esk" checked>Эскиз модели</label>
+                <label><input type="checkbox" name="esk">Оцифровка изображения</label>
+                <h2>Разработка</h2>
+                <select>
+                    <option>Технический рисунок</option>
+                    <option>Технологическое описание модели</option>
+                    <option>Схема дублирования</option>
+                    <option>Конфекционная карта</option>
+                    <option>Табель мер</option>
+                </select>
+                <select>
+                    <option> Создание электронного каталога</option>
+                    <option> Создание фото презентации на базе готовых фотографий</option>
+                    <option> Создание эскизной презентации </option>
+                </select>
+            </div>
+            <div class="tab" id="tab3"></div>
+            <input type="text" class="price" id="price">
+        </div> -->
+
+    <div class="calculate">
+        <select id="item" onchange="format(value); getPrice();">
+            <option selected disabled hidden style='display: none' value=''></option>
+            <option value="1">Пальто утепленное</option>
+            <option value="2">Пальто демисезонное</option>
+            <option value="3">Плащ</option>
+            <option value="4">Куртка утепленная</option>
+            <option value="5">Куртка</option>
+            <option value="6">Пиджак классика</option>
+            <option value="7">Смокинг</option>
+            <option value="8">Фрак</option>
+            <option value="9">Китель</option>
+            <option value="10">Жилет</option>
+            <option value="11">Сорочка классика</option>
+            <option value="12">Сорочка фрачная</option>
+            <option value="13">Манишка</option>
+            <option value="14">Трикотажный джемпер</option>
+            <option value="15">Трикотажная футболка</option>
+            <option value="16">Брюки</option>
+            <option value="17">Брюки с лампасами</option>
+            <option value="18">Шорты</option>
+            <option value="19">Килт</option>
+            <option value="20">Галстук</option>
+            <option value="21">Галстук «бабочка»</option>
+            <option value="22">Шарф, платок</option>
+            <option value="23">Пояс, ремень</option>
+            <option value="24">Камер бант</option>
+            <option value="25">Жакет</option>
+            <option value="26">Сарафан</option>
+            <option value="27">Платье</option>
+            <option value="28">Платье вечернее</option>
+            <option value="29">Блуза</option>
+            <option value="30">Топ</option>
+            <option value="31">Корсет</option>
+            <option value="32">Трикотажный топ</option>
+            <option value="33">Трикотажное платье</option>
+            <option value="34">Юбка</option>
+            <option value="35">Нижняя юбка</option>
+        </select>
+        <div class="tab" id="tab1">
+            <div class="radio" id="male">
+                <label>Мужское<input type="radio" name="male" onchange="getPrice()" checked></label>
+                <label>Женское<input type="radio" name="male" onchange="getPrice()"></label>
+            </div>
+            <div class="radio" id="lining">
+                <label>На подкладке<input type="radio" name="lining" onchange="getPrice()" checked></label>
+                <label>Без подкладки<input type="radio" name="lining" onchange="getPrice()"></label>
+            </div>
+
+            <br>
+
+            <input type="radio" name="tab2" id="name1" checked><label for="name1" class="tabName">Эскизная проработка
+                модели</label>
+            <input type="radio" name="tab2" id="name2"><label for="name2" class="tabName">Изготовление промышленных
+                лекал</label>
+            <input type="radio" name="tab2" id="name3"><label for="name3" class="tabName"> Разработка пакета
+                технологической документации</label>
+            <input type="radio" name="tab2" id="name4"><label for="name4" class="tabName">Дополнительные услуги</label>
+
+            <div class="tab2" id="tab1">
+                <div class="option">
+                    <label>Эскиз модели<input type="checkbox" name="sketch"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Оцифровка изображения<input type="checkbox" name="sketch"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+            </div>
+            <div class="tab2" id="tab2">
+                <div class="option">
+                    <label>Разработка основы конструкции на модель<input type="checkbox" name="lecal"
+                            onchange="getPrice()" checked></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Оцифровка лекал<input type="checkbox" onchange="getPrice()" name="lecal"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Градация лекал по карте заказа<input type="checkbox" onchange="getPrice()"
+                            name="lecal"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+            </div>
+            <div class="tab2" id="tab3">
+                <div class="option">
+                    <label>Технический рисунок<input type="checkbox" name="records"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Технологическое описание модели, лист раскроя, размерный ряд<input type="checkbox"
+                            name="records"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Конфекционная карта<input type="checkbox" name="records"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Схема дублирования<input type="checkbox" name="records"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Таблица измерений в готовом виде (Табель мер)<input type="checkbox" name="records"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+            </div>
+            <div class="tab2" id="tab4">
+                <div class="option">
+                    <label>Конвертация лекал в требуемый формат<input type="checkbox" name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Вывод лекал на бумагу (без вырезки) ширина бумаги 90 см<input type="checkbox"
+                            name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Подбор материалов и фурнитуры<input type="checkbox" name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Изготовление эталона-образца изделия<input type="checkbox" name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Изготовление раскладок<input type="checkbox" name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Создание электронного каталога на базе оцифрованных эскизов<input type="checkbox"
+                            name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+                <div class="option">
+                    <label>Создание фото презентации на базе готовых фотографий<input type="checkbox"
+                            name="other"></label>
+                    <label>количество<input type="number" value="1"></label>
+                </div>
+            </div>
+
+            <div class="price">
+                итоговая стоимость: <span id="price">00</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var isdel;
+        var price;
+        function OldGetPrice() {
+            var val = document.getElementById('tovar').value;
+            var col = document.getElementById('col').value;
+            var p = document.getElementById('price');
+            switch (val) {
+                case '1':
+                    price = 26000 * Number(col);
+                    console.log(price);
+                    break;
+
+                case '2':
+                    price = 21000 * Number(col);
+                    console.log(price);
+                    break;
+
+                case '3':
+                    price = 20000 * Number(col);
+                    console.log(price);
+                    break;
+
+                case '4':
+                    price = 24000 * Number(col);
+                    console.log(price);
+                    break;
+
+                case '5':
+                    price = 18000 * Number(col);
+                    console.log(price);
+                    break;
+
+                case '6':
+                    price = 20000 * Number(col);
+                    console.log(price);
+                    break;
+
+                default:
+                    console.log(document.getElementById('tovar').value)
+                    break;
+            }
+            p.value = price;
+        }
+        function format(value) {
+            var onliMale = [6, 7, 8, 9, 11, 12, 13, 17, 19, 20, 21, 22, 23, 24];
+            var onliLin = [20, 21, 24];
+            var notLin = [11, 12, 13, 14, 15, 22, 23, 32, 33, 35];
+
+            var male = document.getElementsByName('male');
+            var lining = document.getElementsByName('lining');
+
+            for (let index = 0; index < male.length; index++) male[index].removeAttribute('disabled');
+            for (let index = 0; index < lining.length; index++) lining[index].removeAttribute('disabled');
+
+            if (onliMale.includes(Number(value))) {
+                male[0].checked = true;
+                for (let index = 0; index < male.length; index++) {
+                    male[index].setAttribute('disabled', 'disabled');
+                }
+            }
+            if (onliLin.includes(Number(value))) {
+                male[0].checked = true;
+                for (let index = 0; index < male.length; index++) {
+                    lining[index].setAttribute('disabled', 'disabled');
+                }
+            }
+            if (notLin.includes(Number(value))) {
+                male[1].checked = true;
+                for (let index = 0; index < male.length; index++) {
+                    lining[index].setAttribute('disabled', 'disabled');
+                }
+            }
+        }
+        function getPrice() {
+            var item = document.getElementById('item').value;
+            var male = document.getElementsByName('male')[0].checked;
+            var lining = document.getElementsByName('lining')[0].checked;
+            var sketch = document.getElementsByName('sketch');
+            var lecal = document.getElementsByName('lecal');
+            var records = document.getElementsByName('records');
+            var other = document.getElementsByName('other');
+            var price = 0;
+            var lecalPrice = 0;
+
+            if (sketch[0].checked) price = price + Number(8000)
+            if (sketch[1].checked) price = price + Number(6500)
+
+            switch (item) {
+                case '1':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(31);
+                            else lecalPrice = Number(26);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(28);
+                            else lecalPrice = Number(23);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(19);
+                            else lecalPrice = Number(16);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(17);
+                            else lecalPrice = Number(14);
+                        }
+                    }
+                    break;
+
+                case '2':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(25);
+                            else lecalPrice = Number(21);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(24);
+                            else lecalPrice = Number(20);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(15);
+                            else lecalPrice = Number(13);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(14);
+                            else lecalPrice = Number(12);
+                        }
+                    }
+                    break;
+                case '3':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(24);
+                            else lecalPrice = Number(20);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(23);
+                            else lecalPrice = Number(19);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(14);
+                            else lecalPrice = Number(12);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(14);
+                            else lecalPrice = Number(11);
+                        }
+                    }
+                    break;
+                case '4':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(29);
+                            else lecalPrice = Number(24);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(28);
+                            else lecalPrice = Number(23);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(17);
+                            else lecalPrice = Number(14);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(17);
+                            else lecalPrice = Number(14);
+                        }
+                    }
+                    break;
+                case '5':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(22);
+                            else lecalPrice = Number(18);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(19);
+                            else lecalPrice = Number(16);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(13);
+                            else lecalPrice = Number(11);
+                        }
+                        else {
+                            if (lining) lecalPrice = Number(11);
+                            else lecalPrice = Number(10);
+                        }
+                    }
+                    break;
+                case '6':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(24);
+                            else lecalPrice = Number(20);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(14);
+                            else lecalPrice = Number(12);
+                        }
+                    }
+                    break;
+                case '7':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(32);
+                            else lecalPrice = Number(27);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(19);
+                            else lecalPrice = Number(16);
+                        }
+                    }
+                    break;
+                case '8':
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(32);
+                            else lecalPrice = Number(27);
+                        }
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(19);
+                            else lecalPrice = Number(16);
+                        }
+                    }
+                    break;
+                case '9':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(24);
+                            else price = Number(14)
+                        }
+                        else {
+                            if (lecal) price = Number(20);
+                            else price = Number(12)
+                        }
+                    }
+                    break;
+                case '10':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(11);
+                            else price = Number(7)
+                        }
+                        else {
+                            if (lecal) price = Number(9);
+                            else price = Number(5)
+                        }
+                    }
+                    else {
+                        if (lining) {
+                            if (lecal) price = Number(10);
+                            else price = Number(6)
+                        }
+                        else {
+                            if (lecal) price = Number(8);
+                            else price = Number(5)
+                        }
+                    }
+                    break;
+                case '11':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(6);
+                            else price = Number(4)
+                        }
+                    }
+                    break;
+                case '12':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(7);
+                            else price = Number(4)
+                        }
+                    }
+                    break;
+                case '13':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(4.5);
+                            else price = Number(3)
+                        }
+                    }
+                    break;
+                case '14':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(4.5);
+                            else price = Number(3)
+                        }
+                    }
+                    else {
+                        if (!lining) {
+                            if (lecal) price = Number(4.5);
+                            else price = Number(3)
+                        }
+                    }
+                    break;
+                case '15':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(4);
+                            else price = Number(2)
+                        }
+                    }
+                    else {
+                        if (!lining) {
+                            if (lecal) price = Number(4);
+                            else price = Number(2)
+                        }
+                    }
+                    break;
+                case '16':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(13);
+                            else price = Number(8)
+                        }
+                        else {
+                            if (lecal) price = Number(11);
+                            else price = Number(7)
+                        }
+                    }
+                    else {
+                        if (lining) {
+                            if (lecal) price = Number(10);
+                            else price = Number(6)
+                        }
+                        else {
+                            if (lecal) price = Number(8);
+                            else price = Number(5)
+                        }
+                    }
+                    break;
+                case '17':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(14);
+                            else price = Number(8)
+                        }
+                        else {
+                            if (lecal) price = Number(12);
+                            else price = Number(7)
+                        }
+                    }
+                    break;
+                case '18':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(12);
+                            else price = Number(7)
+                        }
+                        else {
+                            if (lecal) price = Number(10);
+                            else price = Number(6)
+                        }
+                    }
+                    else {
+                        if (lining) {
+                            if (lecal) price = Number(8);
+                            else price = Number(5)
+                        }
+                        else {
+                            if (lecal) price = Number(7);
+                            else price = Number(4)
+                        }
+                    }
+                    break;
+                case '19':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(9);
+                            else price = Number(5)
+                        }
+                    }
+                    break;
+                case '20':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(3.2);
+                            else price = Number(2)
+                        }
+                    }
+                    break;
+                case '21':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(1.2);
+                            else price = Number(0.7)
+                        }
+                    }
+                    break;
+                case '22':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(2.4);
+                            else price = Number(1.5)
+                        }
+                    }
+                    break;
+                case '23':
+                    if (male) {
+                        if (!lining) {
+                            if (lecal) price = Number(1.8);
+                            else price = Number(1.1)
+                        }
+                    }
+                    break;
+                case '24':
+                    if (male) {
+                        if (lining) {
+                            if (lecal) price = Number(4.5);
+                            else price = Number(2.7)
+                        }
+                    }
+                    break;
+                case '25':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(18);
+                            else price = Number(11)
+                        }
+                        else {
+                            if (lecal) price = Number(15);
+                            else price = Number(9)
+                        }
+                    }
+                    break;
+                case '26':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(12);
+                            else price = Number(7)
+                        }
+                        else {
+                            if (lecal) price = Number(10);
+                            else price = Number(6)
+                        }
+                    }
+                    break;
+                case '27':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(14);
+                            else price = Number(8)
+                        }
+                        else {
+                            if (lecal) price = Number(12);
+                            else price = Number(7)
+                        }
+                    }
+                    break;
+                case '28':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(24);
+                            else price = Number(14)
+                        }
+                        else {
+                            if (lecal) price = Number(20);
+                            else price = Number(12)
+                        }
+                    }
+                    break;
+                case '29':
+                    if (!male) {
+                        if (lining) {
+                            if (!lecal) price = Number(10);
+                            else price = Number(6)
+                        }
+                    }
+                    break;
+                case '30':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(6);
+                            else price = Number(4)
+                        }
+                        else {
+                            if (lecal) price = Number(5);
+                            else price = Number(3)
+                        }
+                    }
+                    break;
+                case '31':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(13);
+                            else price = Number(8)
+                        }
+                        else {
+                            if (lecal) price = Number(11);
+                            else price = Number(7)
+                        }
+                    }
+                    break;
+                case '32':
+                    if (!male) {
+                        if (!lining) {
+                            if (lecal) price = Number(3);
+                            else price = Number(2)
+                        }
+                    }
+                    break;
+                case '33':
+                    if (!male) {
+                        if (!lining) {
+                            if (lecal) price = Number(9);
+                            else price = Number(5)
+                        }
+                    }
+                    break;
+                case '34':
+                    if (!male) {
+                        if (lining) {
+                            if (lecal) price = Number(8);
+                            else price = Number(5)
+                        }
+                        else {
+                            if (lecal) price = Number(7);
+                            else price = Number(4)
+                        }
+                    }
+                    break;
+                case '35':
+                    if (!male) {
+                        if (!lining) {
+                            if (lecal) price = Number(4.5);
+                            else price = Number(3)
+                        }
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            lecalPrice = lecalPrice * Number(1000);
+            if (price == '0') return;
+            price = price + lecalPrice;
+            console.log(price);
+            document.getElementById('price').innerHTML = price;
+        }
+    </script>
+</body>
+
+</html>
