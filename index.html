@@ -282,6 +282,7 @@
             var other = document.getElementsByName('other');
             var price = 0;
             var lecalPrice = 0;
+            var obrazets = 0;
 
             if (sketch[0].checked) price = price + Number(8000)
             if (sketch[1].checked) price = price + Number(6500)
@@ -300,12 +301,12 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(19);
-                            else lecalPrice = Number(16);
+                            if (lining) obrazets = Number(19);
+                            else obrazets = Number(16);
                         }
                         else {
-                            if (lining) lecalPrice = Number(17);
-                            else lecalPrice = Number(14);
+                            if (lining) obrazets = Number(17);
+                            else obrazets = Number(14);
                         }
                     }
                     break;
@@ -323,12 +324,12 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(15);
-                            else lecalPrice = Number(13);
+                            if (lining) obrazets = Number(15);
+                            else obrazets = Number(13);
                         }
                         else {
-                            if (lining) lecalPrice = Number(14);
-                            else lecalPrice = Number(12);
+                            if (lining) obrazets = Number(14);
+                            else obrazets = Number(12);
                         }
                     }
                     break;
@@ -345,12 +346,12 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(14);
-                            else lecalPrice = Number(12);
+                            if (lining) obrazets = Number(14);
+                            else obrazets = Number(12);
                         }
                         else {
-                            if (lining) lecalPrice = Number(14);
-                            else lecalPrice = Number(11);
+                            if (lining) obrazets = Number(14);
+                            else obrazets = Number(11);
                         }
                     }
                     break;
@@ -367,12 +368,12 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(17);
-                            else lecalPrice = Number(14);
+                            if (lining) obrazets = Number(17);
+                            else obrazets = Number(14);
                         }
                         else {
-                            if (lining) lecalPrice = Number(17);
-                            else lecalPrice = Number(14);
+                            if (lining) obrazets = Number(17);
+                            else obrazets = Number(14);
                         }
                     }
                     break;
@@ -389,12 +390,12 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(13);
-                            else lecalPrice = Number(11);
+                            if (lining) obrazets = Number(13);
+                            else obrazets = Number(11);
                         }
                         else {
-                            if (lining) lecalPrice = Number(11);
-                            else lecalPrice = Number(10);
+                            if (lining) obrazets = Number(11);
+                            else obrazets = Number(10);
                         }
                     }
                     break;
@@ -407,8 +408,8 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(14);
-                            else lecalPrice = Number(12);
+                            if (lining) obrazets = Number(14);
+                            else obrazets = Number(12);
                         }
                     }
                     break;
@@ -421,8 +422,8 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(19);
-                            else lecalPrice = Number(16);
+                            if (lining) obrazets = Number(19);
+                            else obrazets = Number(16);
                         }
                     }
                     break;
@@ -435,315 +436,294 @@
                     }
                     if (other[3].checked) {
                         if (male) {
-                            if (lining) lecalPrice = Number(19);
-                            else lecalPrice = Number(16);
+                            if (lining) obrazets = Number(19);
+                            else obrazets = Number(16);
                         }
                     }
                     break;
                 case '9':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(24);
-                            else price = Number(14)
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(24);
+                            else lecalPrice = Number(14);
                         }
-                        else {
-                            if (lecal) price = Number(20);
-                            else price = Number(12)
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) obrazets = Number(20);
+                            else obrazets = Number(12);
                         }
                     }
                     break;
                 case '10':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(11);
-                            else price = Number(7)
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(11);
+                            else lecalPrice = Number(9);
                         }
                         else {
-                            if (lecal) price = Number(9);
-                            else price = Number(5)
+                            if (lining) lecalPrice = Number(10);
+                            else lecalPrice = Number(8);
                         }
                     }
-                    else {
-                        if (lining) {
-                            if (lecal) price = Number(10);
-                            else price = Number(6)
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) obrazets = Number(7);
+                            else obrazets = Number(5);
                         }
                         else {
-                            if (lecal) price = Number(8);
-                            else price = Number(5)
+                            if (lining) obrazets = Number(6);
+                            else obrazets = Number(5);
                         }
                     }
                     break;
                 case '11':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(6);
-                            else price = Number(4)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(6);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(4);
                     }
                     break;
                 case '12':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(7);
-                            else price = Number(4)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(7);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(4);
                     }
                     break;
                 case '13':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(4.5);
-                            else price = Number(3)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(4.5);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(3);
                     }
                     break;
                 case '14':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(4.5);
-                            else price = Number(3)
-                        }
+                    if (lecal[0].checked) {
+                        if (!lining) lecalPrice = Number(4.5);
                     }
-                    else {
-                        if (!lining) {
-                            if (lecal) price = Number(4.5);
-                            else price = Number(3)
-                        }
+                    if (other[3].checked) {
+                        if (!lining) obrazets = Number(3);
                     }
                     break;
                 case '15':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(4);
-                            else price = Number(2)
-                        }
+                    if (lecal[0].checked) {
+                        if (!lining) lecalPrice = Number(4);
                     }
-                    else {
-                        if (!lining) {
-                            if (lecal) price = Number(4);
-                            else price = Number(2)
-                        }
+                    if (other[3].checked) {
+                        if (!lining) obrazets = Number(2);
                     }
                     break;
                 case '16':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(13);
-                            else price = Number(8)
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(13);
+                            else lecalPrice = Number(11);
                         }
                         else {
-                            if (lecal) price = Number(11);
-                            else price = Number(7)
+                            if (lining) lecalPrice = Number(10);
+                            else lecalPrice = Number(8);
                         }
                     }
-                    else {
-                        if (lining) {
-                            if (lecal) price = Number(10);
-                            else price = Number(6)
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) obrazets = Number(8);
+                            else obrazets = Number(7);
                         }
                         else {
-                            if (lecal) price = Number(8);
-                            else price = Number(5)
+                            if (lining) obrazets = Number(6);
+                            else obrazets = Number(5);
                         }
                     }
                     break;
                 case '17':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(14);
-                            else price = Number(8)
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(14);
+                            else lecalPrice = Number(12);
                         }
-                        else {
-                            if (lecal) price = Number(12);
-                            else price = Number(7)
+                    }
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) obrazets = Number(8);
+                            else obrazets = Number(7);
                         }
                     }
                     break;
                 case '18':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(12);
-                            else price = Number(7)
+                    if (lecal[0].checked) {
+                        if (male) {
+                            if (lining) lecalPrice = Number(12);
+                            else lecalPrice = Number(10);
                         }
                         else {
-                            if (lecal) price = Number(10);
-                            else price = Number(6)
+                            if (lining) lecalPrice = Number(8);
+                            else lecalPrice = Number(7);
                         }
                     }
-                    else {
-                        if (lining) {
-                            if (lecal) price = Number(8);
-                            else price = Number(5)
+                    if (other[3].checked) {
+                        if (male) {
+                            if (lining) obrazets = Number(7);
+                            else obrazets = Number(6);
                         }
                         else {
-                            if (lecal) price = Number(7);
-                            else price = Number(4)
+                            if (lining) obrazets = Number(5);
+                            else obrazets = Number(4);
                         }
                     }
+
                     break;
                 case '19':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(9);
-                            else price = Number(5)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(9);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(5);
                     }
                     break;
                 case '20':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(3.2);
-                            else price = Number(2)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (lining) lecalPrice = Number(3.2);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (lining) obrazets = Number(2);
                     }
                     break;
                 case '21':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(1.2);
-                            else price = Number(0.7)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (lining) lecalPrice = Number(1.2);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (lining) obrazets = Number(0.7);
                     }
                     break;
                 case '22':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(2.4);
-                            else price = Number(1.5)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(2.4);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(1.5);
                     }
                     break;
                 case '23':
-                    if (male) {
-                        if (!lining) {
-                            if (lecal) price = Number(1.8);
-                            else price = Number(1.1)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (!lining) lecalPrice = Number(1.8);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (!lining) obrazets = Number(1.1);
                     }
                     break;
                 case '24':
-                    if (male) {
-                        if (lining) {
-                            if (lecal) price = Number(4.5);
-                            else price = Number(2.7)
-                        }
+                    if (lecal[0].checked) {
+                        if (male) if (lining) lecalPrice = Number(4.5);
+                    }
+                    if (other[3].checked) {
+                        if (male) if (lining) obrazets = Number(2.7);
                     }
                     break;
                 case '25':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(18);
-                            else price = Number(11)
-                        }
-                        else {
-                            if (lecal) price = Number(15);
-                            else price = Number(9)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(18);
+                        else lecalPrice = Number(15);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(11);
+                        else obrazets = Number(9);
                     }
                     break;
                 case '26':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(12);
-                            else price = Number(7)
-                        }
-                        else {
-                            if (lecal) price = Number(10);
-                            else price = Number(6)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(12);
+                        else lecalPrice = Number(10);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(7);
+                        else obrazets = Number(6);
                     }
                     break;
                 case '27':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(14);
-                            else price = Number(8)
-                        }
-                        else {
-                            if (lecal) price = Number(12);
-                            else price = Number(7)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(14);
+                        else lecalPrice = Number(12);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(8);
+                        else obrazets = Number(7);
                     }
                     break;
                 case '28':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(24);
-                            else price = Number(14)
-                        }
-                        else {
-                            if (lecal) price = Number(20);
-                            else price = Number(12)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(24);
+                        else lecalPrice = Number(20);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(14);
+                        else obrazets = Number(12);
                     }
                     break;
                 case '29':
-                    if (!male) {
-                        if (lining) {
-                            if (!lecal) price = Number(10);
-                            else price = Number(6)
-                        }
+                    if (lecal[0].checked) {
+                        lecalPrice = Number(10);
+                    }
+                    if (other[3].checked) {
+                        obrazets = Number(6);
                     }
                     break;
                 case '30':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(6);
-                            else price = Number(4)
-                        }
-                        else {
-                            if (lecal) price = Number(5);
-                            else price = Number(3)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(6);
+                        else lecalPrice = Number(5);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(4);
+                        else obrazets = Number(3);
                     }
                     break;
                 case '31':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(13);
-                            else price = Number(8)
-                        }
-                        else {
-                            if (lecal) price = Number(11);
-                            else price = Number(7)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(13);
+                        else lecalPrice = Number(11);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(8);
+                        else obrazets = Number(7);
                     }
                     break;
                 case '32':
-                    if (!male) {
-                        if (!lining) {
-                            if (lecal) price = Number(3);
-                            else price = Number(2)
-                        }
+                    if (lecal[0].checked) {
+                        lecalPrice = Number(3);
+                    }
+                    if (other[3].checked) {
+                        obrazets = Number(2);
                     }
                     break;
                 case '33':
-                    if (!male) {
-                        if (!lining) {
-                            if (lecal) price = Number(9);
-                            else price = Number(5)
-                        }
+                    if (lecal[0].checked) {
+                        lecalPrice = Number(9);
+                    }
+                    if (other[3].checked) {
+                        obrazets = Number(5);
                     }
                     break;
                 case '34':
-                    if (!male) {
-                        if (lining) {
-                            if (lecal) price = Number(8);
-                            else price = Number(5)
-                        }
-                        else {
-                            if (lecal) price = Number(7);
-                            else price = Number(4)
-                        }
+                    if (lecal[0].checked) {
+                        if (lining) lecalPrice = Number(8);
+                        else lecalPrice = Number(7);
+                    }
+                    if (other[3].checked) {
+                        if (lining) obrazets = Number(5);
+                        else obrazets = Number(4);
                     }
                     break;
                 case '35':
-                    if (!male) {
-                        if (!lining) {
-                            if (lecal) price = Number(4.5);
-                            else price = Number(3)
-                        }
+                    if (lecal[0].checked) {
+                        lecalPrice = Number(4.5);
+                    }
+                    if (other[3].checked) {
+                        obrazets = Number(3);
                     }
                     break;
 
@@ -751,9 +731,10 @@
                     break;
             }
             lecalPrice = lecalPrice * Number(1000);
-            if (price == '0') return;
-            price = price + lecalPrice;
-            console.log(price);
+            if (lecal[1].checked) price += Number(1500);
+            if (lecal[2].checked) price += lecalPrice/5;
+
+            price += lecalPrice;
             document.getElementById('price').innerHTML = price;
         }
     </script>
