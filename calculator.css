@@ -1,0 +1,138 @@
+
+/* new */
+
+.calculate,
+#basket {
+    height: auto;
+    width: 80vw;
+    margin: auto;
+    background: rgb(179, 177, 173);
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 5vh 1%;
+}
+
+#item {
+    height: 5%;
+    width: 80%;
+    margin: 10px 10% 5px;
+}
+
+.tab {
+    width: 100%;
+    
+    text-align: center;
+}
+
+.radio {
+    margin: 0 10% 5px;
+    width: 40%;
+}
+.radio label {
+    background: #e5715441;
+    text-align: center;
+    padding: 2px;
+}
+.radio label,
+.option label{
+    display: inline-block;
+    width: 45%;
+    margin: 0;
+}
+.option label [type="checkbox"] {
+    float: right;
+    margin-right: 4%;
+}
+.option label [type="number"] {
+    margin-left: 5px;
+    width: 10%;
+}
+
+.tabName {
+    display: inline-block;
+    height: 80px;
+    /* width: 25%; */
+    margin: 0;
+}
+
+.tabName img {
+    height: 100%;
+}
+
+.tab [type="radio"]:checked + label img {
+    border: 5px solid #e57254;
+    border-radius: 50%;
+}
+
+.tab2 {
+    /* margin-top: 60px; */
+    display: none;
+    height: auto;
+    width: 100%;
+    background: #e57254;
+    border: 1px solid #e57254;
+}
+
+.tab2 .option {
+    width: 80%;
+    margin: 0 10%;
+}
+
+.radio input:checked + label {
+    background: #e57254;
+}
+
+[type="radio"] {
+    display: none;
+}
+
+#name1:checked~#tab1,
+#name2:checked~#tab2,
+#name3:checked~#tab3,
+#name4:checked~#tab4 {
+    display: block;
+}
+.reset,
+.price {
+    position: absolute;
+    bottom: 0;
+    font-size: 3vh;
+}
+.price {
+    right: 0;
+    padding: 5px;
+}
+.reset {
+    left: 0;
+}
+
+/* basket */
+
+#basket {
+    margin-top: 20px;
+    display: none;
+}
+
+#lightbox {
+    display: none;
+    position: absolute;
+    width: 30%;
+    height: auto;
+    left: 35%;
+    top: 20%;
+    background: #353538;
+    z-index: 1002;
+    overflow: auto;
+}
+#mail {
+    display: none;
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    left: 15%;
+    top: 20%;
+    background: #7d7d80;
+    z-index: 1002;
+    overflow: scroll;
+}
