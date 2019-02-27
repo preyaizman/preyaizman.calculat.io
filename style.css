@@ -30,6 +30,8 @@
 }
 .radio label {
     background: #e5715441;
+    text-align: center;
+    padding: 2px;
 }
 .radio label,
 .option label{
