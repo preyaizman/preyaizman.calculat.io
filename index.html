@@ -7,12 +7,16 @@
 <body>
     <div class="calculate">
         <div class="radio" id="male">
-            <label>Мужское<input type="radio" name="male" onchange="filtr()" checked></label>
-            <label>Женское<input type="radio" name="male" onchange="filtr()"></label>
+            <input type="radio" name="male" id="male1" onchange="filtr()" checked>
+            <label for="male1">Мужское</label>
+            <input type="radio" name="male" id="male2" onchange="filtr()">
+            <label for="male2">Женское</label>
         </div>
         <div class="radio" id="lining">
-            <label>На подкладке<input type="radio" name="lining" onchange="filtr()" checked></label>
-            <label>Без подкладки<input type="radio" name="lining" onchange="filtr()"></label>
+            <input type="radio" name="lining" id="lining1" onchange="filtr()" checked>
+            <label for="lining1">На подкладке</label>
+            <input type="radio" name="lining" id="lining2" onchange="filtr()">
+            <label for="lining2">Без подкладки</label>
         </div>
         <select id="item" onchange="getPrice();">
             <option selected disabled hidden style='display: none' value=''>изделие</option>
@@ -20,13 +24,14 @@
         </select>
         <div class="tab" id="tab">
 
-            <input type="radio" name="tab2" id="name1" checked><label for="name1" class="tabName">Эскизная проработка
-                модели</label>
-            <input type="radio" name="tab2" id="name2"><label for="name2" class="tabName">Изготовление промышленных
-                лекал</label>
-            <input type="radio" name="tab2" id="name3"><label for="name3" class="tabName"> Разработка пакета
-                технологической документации</label>
-            <input type="radio" name="tab2" id="name4"><label for="name4" class="tabName">Дополнительные услуги</label>
+            <input type="radio" name="tab2" id="name1" checked>
+            <label for="name1" class="tabName"><img src="imagus.png" alt=""></label>
+            <input type="radio" name="tab2" id="name2">
+            <label for="name2" class="tabName"><img src="imagus.png" alt=""></label>
+            <input type="radio" name="tab2" id="name3">
+            <label for="name3" class="tabName"><img src="imagus.png" alt=""></label>
+            <input type="radio" name="tab2" id="name4">
+            <label for="name4" class="tabName"><img src="imagus.png" alt=""></label>
 
             <div class="tab2" id="tab1">
                 <div class="option">
@@ -122,97 +127,92 @@
 
     </div>
 
-
-
     <script>
         class item {
-            constructor(name, male, lining, lecalPrice, samplePrice) {
+            constructor(name, male, lining, price) {
                 this.name = name;
                 this.male = male;
                 this.lining = lining;
-                this.lecalPrice = lecalPrice;
-                this.samplePrice = samplePrice;
+                this.price = price;
             }
         }
 
         var items = [
-            new item('Пальто утепленное', true, true, 31000, 19000),
-            new item('Пальто утепленное', true, false, 26000, 16000),
-            new item('Пальто утепленное', false, true, 28000, 17000),
-            new item('Пальто утепленное', false, false, 31000, 19000),
-            new item('Пальто демисезонное', true, true, 25000, 15000),
-            new item('Пальто демисезонное', true, false, 21000, 13000),
-            new item('Пальто демисезонное', false, true, 24000, 14000),
-            new item('Пальто демисезонное', false, false, 20000, 12000),
-            new item('Плащ', true, true, 24000, 14000),
-            new item('Плащ', true, false, 20000, 12000),
-            new item('Плащ', false, true, 23000, 14000),
-            new item('Плащ', false, false, 19000, 11000),
-            new item('Куртка утепленная', true, true, 29000, 17000),
-            new item('Куртка утепленная', true, false, 24000, 14000),
-            new item('Куртка утепленная', false, true, 28000, 17000),
-            new item('Куртка утепленная', false, false, 23000, 14000),
-            new item('Куртка', true, true, 22000, 13000),
-            new item('Куртка', true, false, 18000, 11000),
-            new item('Куртка', false, true, 19000, 11000),
-            new item('Куртка', false, false, 16000, 10000),
-            new item('Жилет', true, true, 11000, 7000),
-            new item('Жилет', true, false, 9000, 5000),
-            new item('Жилет', false, true, 10000, 6000),
-            new item('Жилет', false, false, 8000, 5000),
-            new item('Трикотажный джемпер', true, false, 4500, 3000),
-            new item('Трикотажный джемпер', false, false, 5000, 3000),
-            new item('Трикотажная футболка', true, false, 4000, 2000),
-            new item('Трикотажная футболка', false, false, 4000, 2000),
-            new item('Брюки', true, true, 13000, 8000),
-            new item('Брюки', true, false, 11000, 7000),
-            new item('Брюки', false, true, 10000, 6000),
-            new item('Брюки', false, false, 8000, 5000),
-            new item('Шорты', true, true, 12000, 7000),
-            new item('Шорты', true, false, 10000, 6000),
-            new item('Шорты', false, true, 8000, 5000),
-            new item('Шорты', false, false, 7000, 4000),
-            new item('Пиджак классика', true, true, 24000, 14000),
-            new item('Пиджак классика', true, false, 20000, 12000),
-            new item('Смокинг', true, true, 32000, 19000),
-            new item('Смокинг', true, false, 27000, 16000),
-            new item('Фрак', true, true, 32000, 19000),
-            new item('Фрак', true, false, 27000, 16000),
-            new item('Китель', true, true, 24000, 14000),
-            new item('Китель', true, false, 20000, 12000),
-            new item('Сорочка классика', true, false, 6000, 4000),
-            new item('Сорочка фрачная', true, false, 7000, 4000),
-            new item('Манишка', true, false, 4500, 3000),
-            new item('Брюки с лампасами', true, true, 14000, 8000),
-            new item('Брюки с лампасами', true, false, 12000, 7000),
-            new item('Килт', true, false, 9000, 5000),
-            new item('Галстук', true, true, 3200, 2000),
-            new item('Галстук «бабочка»', true, true, 1200, 700),
-            new item('Шарф, платок', true, false, 2400, 1500),
-            new item('Пояс, ремень', true, false, 1800, 1100),
-            new item('Камер бант', true, true, 4500, 2700),
-            new item('Жакет', false, true, 18000, 11000),
-            new item('Жакет', false, false, 15000, 9000),
-            new item('Сарафан', false, true, 12000, 7000),
-            new item('Сарафан', false, false, 10000, 6000),
-            new item('Платье', false, true, 14000, 8000),
-            new item('Платье', false, false, 12000, 7000),
-            new item('Платье вечернее', false, true, 24000, 14000),
-            new item('Платье вечернее', false, false, 20000, 12000),
-            new item('Блуза', false, false, 10000, 6000),
-            new item('Топ', false, true, 6000, 4000),
-            new item('Топ', false, false, 5000, 3000),
-            new item('Корсет', false, true, 13000, 8000),
-            new item('Корсет', false, false, 11000, 7000),
-            new item('Трикотажный топ', false, false, 4000, 2000),
-            new item('Трикотажное платье', false, false, 9000, 5000),
-            new item('Юбка', false, true, 8000, 5000),
-            new item('Юбка', false, false, 7000, 4000),
-            new item('Нижняя юбка', false, false, 4500, 3000)
+            new item('Пальто утепленное', false, false, 13000),
+            new item('Пальто демисезонное', false, false, 10000),
+            new item('Плащ', false, false, 9000),
+            new item('Куртка утепленная', false, false, 23000),
+            new item('Куртка', false, false, 8000),
+            new item('Жакет', false, false, 7000),
+            new item('Сарафан', false, false, 5000),
+            new item('Платье', false, false, 6000),
+            new item('Платье вечернее', false, false, 10000),
+            new item('Жилет', false, false, 4000),
+            new item('Блуза', false, false, 5000),
+            new item('Топ', false, false, 2500),
+            new item('Корсет', false, false, 5000),
+            new item('Трикотажный джемпер', false, false, 3000),
+            new item('Трикотажная футболка', false, false, 2500),
+            new item('Трикотажный топ', false, false, 2500),
+            new item('Трикотажное платье', false, false, 4500),
+            new item('Юбка', false, false, 3500),
+            new item('Нижняя юбка', false, false, 2000),
+            new item('Брюки', false, false, 4000),
+            new item('Шорты', false, false, 3500),
+            new item('Пальто утепленное', false, true, 14000),
+            new item('Пальто демисезонное', false, true, 24000),
+            new item('Плащ', false, true, 11000),
+            new item('Куртка утепленная', false, true, 14000),
+            new item('Куртка', false, true, 10000),
+            new item('Жакет', false, true, 8000),
+            new item('Сарафан', false, true, 6000),
+            new item('Платье', false, true, 7000),
+            new item('Платье вечернее', false, true, 12000),
+            new item('Жилет', false, true, 5000),
+            new item('Топ', false, true, 3000),
+            new item('Корсет', false, true, 6000),
+            new item('Юбка', false, true, 4500),
+            new item('Брюки', false, true, 5000),
+            new item('Шорты', false, true, 4000),
+            new item('Пальто утепленное', true, false, 13000),
+            new item('Пальто демисезонное', true, false, 11000),
+            new item('Плащ', true, false, 10000),
+            new item('Куртка утепленная', true, false, 12000),
+            new item('Куртка', true, false, 9000),
+            new item('Пиджак классика', true, false, 10000),
+            new item('Смокинг', true, false, 14000),
+            new item('Фрак', true, false, 17000),
+            new item('Китель', true, false, 10000),
+            new item('Жилет', true, false, 4500),
+            new item('Сорочка классика', true, false, 30000),
+            new item('Сорочка фрачная', true, false, 3500),
+            new item('Манишка', true, false, 2000),
+            new item('Трикотажный), джемпер', true, false, 2500),
+            new item('Трикотажная футболка', true, false, 20000),
+            new item('Брюки', true, false, 6000),
+            new item('Брюки с лампасами', true, false, 6000),
+            new item('Шорты', true, false, 5000),
+            new item('Килт', true, false, 4500),
+            new item('Шарф, платок', true, false, 1000),
+            new item('Пояс, ремень', true, false, 1000),
+            new item('Пальто утепленное', true, true, 14000),
+            new item('Пальто демисезонное', true, true, 12000),
+            new item('Плащ', true, true, 11000),
+            new item('Куртка утепленная', true, true, 13000),
+            new item('Куртка', true, true, 10000),
+            new item('Пиджак классика', true, true, 11000),
+            new item('Смокинг', true, true, 15000),
+            new item('Фрак', true, true, 18000),
+            new item('Китель', true, true, 11000),
+            new item('Жилет', true, true, 5000),
+            new item('Брюки', true, true, 7000),
+            new item('Брюки с лампасами', true, true, 7000),
+            new item('Шорты', true, true, 6000),
+            new item('Галстук', true, true, 1500),
+            new item('Галстук «бабочка»', true, true, 1000),
+            new item('Камер бант', true, true, 2000)
         ];
-        
-        filtr();
-        
+
         function filtr() {
             var male = document.getElementsByName('male')[0].checked;
             var lining = document.getElementsByName('lining')[0].checked;
@@ -246,26 +246,26 @@
             var lecalPrice = 0;
             var sample = 0;
 
-            if (sketch[0].checked) price += Number(8000 * Number(sketchQ[0].value));
-            if (sketch[1].checked) price += Number(6500 * Number(sketchQ[1].value))
+            if (sketch[0].checked) price += Number(5000 * Number(sketchQ[0].value));
+            if (sketch[1].checked) price += Number(3000 * Number(sketchQ[1].value))
 
             if (lecal[0].checked) {
-                lecalPrice = items[item].lecalPrice;
+                lecalPrice = items[item].price;
                 price += lecalPrice * Number(lecalQ[0].value);
                 if (lecal[1].checked) price += Number(1500 * Number(lecalQ[1].value));
                 if (lecal[2].checked) price += (lecalPrice / 5) * Number(lecalQ[2].value);
-                if (other[0].checked) price += Number(100 * Number(otherQ[4].value));
+                if (other[0].checked) price += Number(1000 * Number(otherQ[4].value));
                 if (other[1].checked) price += Number(300 * Number(otherQ[4].value));
             }
 
             if (records[0].checked) price += Number(2600 * Number(recordsQ[0].value));
             if (records[1].checked) price += Number(1300 * Number(recordsQ[1].value));
-            if (records[2].checked) price += Number(3900 * Number(recordsQ[2].value));
+            if (records[2].checked) price += Number(2000 * Number(recordsQ[2].value));
             if (records[3].checked) price += Number(1300 * Number(recordsQ[3].value));
             if (records[4].checked) price += Number(700 * Number(recordsQ[4].value));
 
-            if (other[2].checked) price += Number(4500 * Number(otherQ[2].value));
-            if (other[3].checked) price += items[item].samplePrice * Number(otherQ[3].value);
+            if (other[2].checked) price += Number(2000 * Number(otherQ[2].value));
+            if (other[3].checked) price += (items[item].price / 2) * Number(otherQ[3].value);
             if (other[4].checked) price += Number(1300 * Number(otherQ[4].value));
             if (other[5].checked) price += Number(2000 * Number(otherQ[5].value));
             if (other[6].checked) price += Number(3400 * Number(otherQ[6].value));

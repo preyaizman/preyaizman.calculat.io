@@ -3,13 +3,13 @@
 
 .calculate {
     height: auto;
-    min-height: 300px;
     width: 80vw;
     margin: auto;
     background: rgb(179, 177, 173);
     display: block;
     overflow: hidden;
     position: relative;
+    padding: 5vh 1%;
 }
 
 #item {
@@ -20,14 +20,17 @@
 
 .tab {
     width: 100%;
-    min-height: 400px;
+    
+    text-align: center;
 }
 
 .radio {
     margin: 0 10% 5px;
     width: 40%;
 }
-
+.radio label {
+    background: #e5715441;
+}
 .radio label,
 .option label{
     display: inline-block;
@@ -44,20 +47,27 @@
 }
 
 .tabName {
-    display: block;
-    height: 40px;
-    width: 25%;
-    float: left;
+    display: inline-block;
+    height: 80px;
+    /* width: 25%; */
     margin: 0;
-    background: rosybrown;
+}
+
+.tabName img {
+    height: 100%;
+}
+
+.tab [type="radio"]:checked + label {
+    border: 5px solid #e57254;
+    border-radius: 50%;
 }
 
 .tab2 {
-    margin: 0;
+    /* margin-top: 60px; */
     display: none;
     height: auto;
     width: 100%;
-    background: rgba(255, 244, 93);
+    background: #e57254;
 }
 
 .tab2 .option {
@@ -65,11 +75,11 @@
     margin: 0 10%;
 }
 
-[type="radio"]:checked + label {
-    background: rgba(255, 244, 93);
+.radio input:checked + label {
+    background: #e57254;
 }
 
-[name="tab2"] {
+[type="radio"] {
     display: none;
 }
 
